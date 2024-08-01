@@ -1,7 +1,5 @@
 let eyeicon = document.getElementById("eyeicon");
 let password = document.getElementById("password");
-console.log(password)
-console.log(eyeicon)
 
 eyeicon.onclick = function(){
     if(password.type == "password"){

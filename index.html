@@ -16,29 +16,28 @@
                 <input type="text" placeholder="E-mail" maxlength="50" id="email"  onkeyup="emailValidation()">
                 <i class='bx bx-envelope' id="envelope-icon" ></i>
             </div>
-            <span class="error-msg" id="email-error"></span>
-            <div class="input-box fieldTop">
+            <p class="error-box"><span class="error-msg" id="email-error"></span></p>
+            <div class="input-box" id="user-box">
                 <input type="text" placeholder="Username" maxlength="50"  id="username" onkeyup="usernameValidation()">
                 <i class='bx bxs-user' id="user-icon"></i>
             </div>
-            <span class="error-msg" id="username-error"></span>
-            <div class="input-box fieldTop">
+            <p class="error-box"><span class="error-msg" id="username-error"></span></p>
+            <div class="input-box" id="password-box">
                 <input type="password" placeholder="Password" id="password" onkeyup="passwordValidation()">
                 <i class='bx bxs-hide' id="eyeicon"></i>
                 <i class='bx bxs-lock-alt' id="password-icon"></i>
             </div>
-            <span class="error-msg" id="password-error"></span>
+            <p class="error-box"><span class="error-msg" id="password-error"></span></p>
             <div class="remember-forgot">
                 <label><input type="checkbox">Remember me</label>
                 <a href="#">Forgot password?</a>
             </div>
-            <button type="submit" class="btn" id="reg-btn">Register</button>
+            <button type="button" class="btn" id="reg-btn" disabled=true>Register</button>
             <div class="login-link">
                 <p>Do you have an account? <a href="#">Login</a></p>
             </div>
         </form>
     </div>
     <script src="validation_script.js"></script>
-    <script src="password_script.js"></script>
 </body>
 </html>

@@ -113,6 +113,14 @@ a{
     margin-left: 20px;
     line-height: 1;
 }
+.form-box{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-msg{
+    
+    
+}
 
 @media screen and (max-width: 380px){
     .remember-forgot{

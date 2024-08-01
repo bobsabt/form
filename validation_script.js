@@ -14,6 +14,7 @@ let passwordIcon = document.getElementById("password-icon");
 let passwordError = document.getElementById("password-error");
 
 let button = document.getElementById("reg-btn");
+let formMsg = document.getElementById("form-msg");
 
 eyeicon.onclick = function () {
     if (passwordField.type == "password") {
@@ -26,6 +27,7 @@ eyeicon.onclick = function () {
 };
 
 function emailValidation() {
+    formMsg.innerHTML = "";
     if (emailField.value.length != 0 && 
         !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
     ) {
@@ -41,6 +43,7 @@ function emailValidation() {
 }
 
 function usernameValidation() {
+    formMsg.innerHTML = "";
     if (usernameField.value && usernameField.value.length < 2) {
         usernameError.innerHTML = "Username must have been at least 2 character";
         userIcon.style.color = "red";
@@ -57,20 +60,21 @@ function usernameValidation() {
 const regularExpression = /^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
 function passwordValidation() {
-    
+    formMsg.innerHTML = "";
     if (!regularExpression.test(passwordField.value) && passwordField.value.length > 0) {
         passwordError.innerHTML =
             "Password must have contain at least 1 number and 1 uppercase letter, length 6-16";
         passwordIcon.style.color = "red";
         return false;
     }
-    
     passwordError.innerHTML = "";
     passwordIcon.style.color = "#fff";
+
+
     return true;
 }
 
-function buttonDisabled() {
+function formValidation() {
   if (
     emailField.value.length > 0 &&
     emailValidation() &&
@@ -79,12 +83,12 @@ function buttonDisabled() {
     passwordField.value.length > 0 &&
     passwordValidation()
   ) {
-    console.log("not disabled");
-    button.style.cursor = "not-allowed";
-    return true;
+        formMsg.innerHTML = "Thank you for your registration!";
+        formMsg.style.color = "black";
+        emailField.value = "";
+        usernameField.value = "";
+        passwordField.value = "";
   } else {
-    button.style.cursor = "not-allowed";
-    console.log("disabled");
-    return false;
+        formMsg.innerHTML = "Your registration is not complete, please fill every field";
   }
 }

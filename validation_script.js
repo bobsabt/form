@@ -16,56 +16,58 @@ let passwordError = document.getElementById("password-error");
 let button = document.getElementById("reg-btn");
 
 eyeicon.onclick = function () {
-  if (passwordField.type == "password") {
-    passwordField.type = "text";
-    eyeicon.className = "bx bxs-show";
-  } else {
-    passwordField.type = "password";
-    eyeicon.className = "bx bxs-hide";
-  }
+    if (passwordField.type == "password") {
+        passwordField.type = "text";
+        eyeicon.className = "bx bxs-show";
+    } else {
+        passwordField.type = "password";
+        eyeicon.className = "bx bxs-hide";
+    }
 };
 
 function emailValidation() {
-  if (
-    !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
-  ) {
-    emailError.innerHTML = "Please enter a valid email addres";
-    envelopeIcon.style.color = "red";
-    userBox.style.marginTop = "15px";
-    return false;
-  }
-  emailError.innerHTML = "";
-  envelopeIcon.style.color = "#fff";
-  userBox.style.marginTop = "30px";
-  return true;
+    if (emailField.value.length != 0 && 
+        !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
+    ) {
+        emailError.innerHTML = "Please enter a valid email addres";
+        envelopeIcon.style.color = "red";
+        userBox.style.marginTop = "15px";
+        return false;
+    }
+    emailError.innerHTML = "";
+    envelopeIcon.style.color = "#fff";
+    userBox.style.marginTop = "30px";
+    return true;
 }
 
 function usernameValidation() {
-  if (usernameField.value.length < 2) {
-    usernameError.innerHTML = "Username must have been at least 2 character";
-    userIcon.style.color = "red";
-    passwordBox.style.marginTop = "15px";
-    return false;
-  }
-  usernameError.innerHTML = "";
-  userIcon.style.color = "#fff";
-  passwordBox.style.marginTop = "15px";
-  return true;
+    if (usernameField.value && usernameField.value.length < 2) {
+        usernameError.innerHTML = "Username must have been at least 2 character";
+        userIcon.style.color = "red";
+        passwordBox.style.marginTop = "15px";
+        return false;
+    }
+    usernameError.innerHTML = "";
+    userIcon.style.color = "#fff";
+    passwordBox.style.marginTop = "30px";
+    return true;
 }
 
 // at least one number and one uppercase letter, length between 6-16, it can contain '!@#$%^&*'
 const regularExpression = /^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
 function passwordValidation() {
-  if (!regularExpression.test(passwordField.value)) {
-    passwordError.innerHTML =
-      "Password must have contain at least 1 number and 1 uppercase letter, length 6-16";
-    passwordIcon.style.color = "red";
-    return false;
-  }
-  passwordError.innerHTML = "";
-  passwordIcon.style.color = "#fff";
-  return true;
+    
+    if (!regularExpression.test(passwordField.value) && passwordField.value.length > 0) {
+        passwordError.innerHTML =
+            "Password must have contain at least 1 number and 1 uppercase letter, length 6-16";
+        passwordIcon.style.color = "red";
+        return false;
+    }
+    
+    passwordError.innerHTML = "";
+    passwordIcon.style.color = "#fff";
+    return true;
 }
 
 function buttonDisabled() {

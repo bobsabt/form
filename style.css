@@ -52,7 +52,7 @@ body{
 .input-box input::placeholder{
     color: #fff;
 }
-#user-box, #password-box{
+.field-box{
     margin-top: 30px;
 }
 .input-box i{

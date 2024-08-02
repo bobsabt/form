@@ -32,7 +32,7 @@ function emailValidation() {
         !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
     ) {
         emailError.innerHTML = "Please enter a valid email addres";
-        envelopeIcon.style.color = "red";
+        envelopeIcon.style.color = "rgb(170, 17, 17)";
         userBox.style.marginTop = "15px";
         return false;
     }
@@ -46,7 +46,7 @@ function usernameValidation() {
     formMsg.innerHTML = "";
     if (usernameField.value && usernameField.value.length < 2) {
         usernameError.innerHTML = "Username must have been at least 2 character";
-        userIcon.style.color = "red";
+        userIcon.style.color = "rgb(170, 17, 17)";
         passwordBox.style.marginTop = "15px";
         return false;
     }
@@ -64,7 +64,7 @@ function passwordValidation() {
     if (!regularExpression.test(passwordField.value) && passwordField.value.length > 0) {
         passwordError.innerHTML =
             "Password must have contain at least 1 number and 1 uppercase letter, length 6-16";
-        passwordIcon.style.color = "red";
+        passwordIcon.style.color = "rgb(170, 17, 17)";
         return false;
     }
     passwordError.innerHTML = "";

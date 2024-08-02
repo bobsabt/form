@@ -106,7 +106,8 @@ a{
     right: 45px;
 }
 .error-msg{
-    color: red;
+    color: rgb(170, 17, 17);
+    font-weight: bold;
     font-size: 10px;
 }
 .error-box{

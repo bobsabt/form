@@ -119,11 +119,6 @@ a{
     text-align: center;
     margin-bottom: 10px;
 }
-.form-msg{
-    
-    
-}
-
 @media screen and (max-width: 380px){
     .remember-forgot{
         flex-direction: column;

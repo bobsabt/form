@@ -20,6 +20,7 @@ body{
     width: 400px;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     color: #fff;
     border-radius: 10px;

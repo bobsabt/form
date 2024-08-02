@@ -31,7 +31,7 @@ function emailValidation() {
     if (emailField.value.length != 0 && 
         !emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
     ) {
-        emailError.innerHTML = "Please enter a valid email addres";
+        emailError.innerHTML = "Please enter a valid email address";
         envelopeIcon.style.color = "rgb(170, 17, 17)";
         userBox.style.marginTop = "15px";
         return false;
